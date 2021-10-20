@@ -1,0 +1,751 @@
+* {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+  }
+  
+  body {
+    /* font-family: 'Noto Sans KR', sans-serif; */
+    font-family: 'Pretendard-Regular';
+  }
+
+  /* Reset */
+
+  ol,
+  ul,
+  li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  button {
+    border: none;
+    background: none;
+  }
+
+  /* 헤더 */
+
+  header {
+    /* position: relative; */
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    background-color: #fff;
+    z-index: 5;
+    top: 0;
+  }
+
+  .tomwrap {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  /* 모바일 */
+  .m-gnb {
+    display: none;
+  }
+  /* 로고 */
+
+  .logo {
+    position: absolute;
+    top: 10px;
+  }
+
+  /* 토글 */
+
+  .toogle {
+    display: none;
+  }
+
+  .cart {
+    display: none;
+  }
+
+  /* gnb 부분 */
+
+  .gnb ul {
+    display: flex;
+    justify-content: right;
+    padding: 10px 0;
+  }
+  
+  .gnb-top li {
+    position: relative;
+    margin: 0 10px;
+  }
+
+  .gnb-top li:last-child {
+    margin-right: 0;
+  }
+
+  .gnb ul li a {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  /* gnb-top 가상요소 */
+
+  .gnb-top li::after {
+    position: absolute;
+    top: 5px;
+    left: -8px;
+    display: block;
+    content: '';
+    width: 1px;
+    height: 15px;
+    background-color: #000;
+  }
+
+  .gnb-top li:first-child::after {
+    display: none;
+  }
+
+  /* gnb-btm */
+
+  .gnb-btm li {
+    position: relative;
+    margin: 0 15px;
+  }
+
+  .gnb-btm li:last-child {
+    margin-right: 0;
+  }
+
+  /* gnb-btm 가상요소 */
+
+  .gnb-btm li::after {
+    position: absolute;
+    top: 5px;
+    left: -15px;
+    display: block;
+    content: '';
+    width: 1px;
+    height: 15px;
+    background-color: #000;
+  }
+
+  .gnb-btm li:first-child::after {
+    display: none;
+  }
+
+  /* 슬라이드 부분 */
+  .slide {
+    position: relative;
+    width: 100%;
+    padding-top: 120px;
+    overflow: hidden;
+  }
+
+  .slide > button {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    width: 71px;
+    height: 71px;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+    cursor: pointer;
+  }
+
+  .slide button::before {
+    font-family:"xeicon";
+    font-size: 60px;
+    color: #fff;
+  }
+
+  .slide button.slick-prev {
+    font-size: 0;
+  }
+
+  .slide button.slick-prev::before {
+    color: #000;
+    content: "\e93d";
+  }
+
+  .slide button.slick-next {
+    font-size: 0;
+    right: 0;
+  }
+
+  .slide button.slick-next::before {
+    color: #000;
+    content: "\e940";
+  }
+
+  .slick-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .slick-dots li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .slick-dots li > button {
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+
+  }
+
+  .slick-dots li > button:hover {
+    background-color: powderblue;
+    transition: 0.2s;
+  }
+ 
+
+  .slide-img1 > div{
+    display: inline-block;
+    background-image: url(./asset/main/mainbanner1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    height: 700px;
+    width: 100%;
+  }
+
+  .slide-img2 > div{
+    display: inline-block;
+    background-image: url(./asset//main/mainbanner2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    height: 700px;
+    width: 100%;
+  }
+
+  .slide-img3 > div{
+    display: block;
+    background-image: url(./asset/main/main3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    height: 700px;
+    width: 100%;
+  }
+
+/* 메뉴섹션 */
+.menu {
+  /* height: 700px; */
+  text-align: center;
+}
+
+.menu-desc {
+  position: relative;
+  display: flex;
+}
+
+.menu-title {
+  margin: 100px 0 50px;
+  text-align: center;
+}
+
+.menu-item {
+  display: inline-block;
+}
+
+.menu-item img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.menu-item span {
+  font-size: 20px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+/* 메뉴 슬라이드 버튼 커스텀 */
+
+.menu-desc button {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  width: 71px;
+  height: 71px;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.0);
+  transform: translateY(-50%);
+  border: none;
+  cursor: pointer;
+}
+
+.menu-desc button::before {
+  font-family:"xeicon";
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.menu-desc button.slick-prev {
+  font-size: 0;
+  left: 0;
+}
+
+.menu-desc button.slick-prev::before {
+  color: #000;
+  content: "\e93d";
+}
+
+.menu-desc button.slick-next {
+  font-size: 0;
+  right: 0;
+}
+
+.menu-desc button.slick-next::before {
+  color: #000;
+  content: "\e940";
+}
+
+/* 탐앤탐스 소개 */
+
+.tmbrand {
+  background: url(./asset/img/section2_bg.jpg) no-repeat center / 100% 100%;
+  height: 700px;
+  margin-top: 100px;
+}
+
+.tmbrand-desc {
+  display: inline-block;
+  width: 50%;
+  float: right;
+  margin: 100px 0;
+}
+
+.tmbrand-desc h2 {
+  font-size: 48px;
+  font-weight: 600;
+  color: #572a31;
+}
+
+.tmbrand-desc h2 strong {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.tmbrand-desc > p {
+  font-size: 24px;
+  font-weight: 500;
+  color: #572a31;
+  line-height: 1.5;
+}
+
+.tmbrand-link {
+  display: inline-flex;
+  margin-top: 50px;
+}
+
+.tmbrand-link div {
+  width: 185px;
+  height: 60px;
+  border: 1px solid #572a31;
+  margin-right: 10px;
+}
+
+.tmbrand-link div:first-child {
+  background-color: #572a31;
+}
+
+.tmbrand-link p {
+  font-size: 1.5em;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 15px;
+  color: #572a31;
+}
+
+.tmbrand-link div:first-child p {
+  color: #fff;
+}
+
+/* 탐앤탐스 선물 */
+
+.tmgift {
+  text-align: center;
+}
+
+.gift-title {
+  margin: 100px 0 50px;
+}
+
+.gift-desc {
+  display: flex;
+  position: relative;
+}
+
+.gift-item img{
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+.gift-item span {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.gift-desc button {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  width: 71px;
+  height: 71px;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.0);
+  transform: translateY(-50%);
+  border: none;
+  cursor: pointer;
+}
+
+.gift-desc button::before {
+  font-family:"xeicon";
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.gift-desc button.slick-prev {
+  font-size: 0;
+  left: 0;
+}
+
+.gift-desc button.slick-prev::before {
+  color: #000;
+  content: "\e93d";
+}
+
+.gift-desc button.slick-next {
+  font-size: 0;
+  right: 0;
+}
+
+.gift-desc button.slick-next::before {
+  color: #000;
+  content: "\e940";
+}
+
+/* 탐앤탐스 SNS */
+
+.sns-title {
+  margin: 100px 0 50px;
+  text-align: center;
+  width: 100%;
+}
+
+.sns-list {
+}
+
+.sns-list ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sns-list ul li {
+  width: 20%;
+  /* height: auto; */
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  overflow: hidden;
+}
+
+.sns-list ul li img {
+  width: 100%;
+  height: auto;
+  transition: all 0.5s ease-in-out;
+}
+
+.sns-list ul li:hover img {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+
+/* .sns-list ul li img {
+  width: 280px;
+  height: 280px;
+} */
+
+/* 푸터 */
+
+footer {
+  margin-top: 100px;
+  height: 300px;
+  background-color: #d5d5d5;
+}
+
+.footer-desc {
+  position: relative;
+  display: inline-block;
+  padding: 50px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 푸터 섹션1 */
+
+.footer1 {
+  display: inline-block;
+  color: #572a31;
+  margin-right: 100px;
+}
+
+.footer1 h6 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer1 p {
+  font-size: 38px;
+}
+
+/* 푸터 섹션2 */
+
+.footer2 {
+  position: absolute;
+  display: inline-block;
+  width: 500px;
+} 
+
+.footer2 ul {
+  display: flex;
+  flex-wrap: wrap;
+  /* align-items: stretch; */
+  /* justify-content: flex-start; */
+  line-height: 1.7;
+} 
+
+.footer2 ul li {
+  flex-wrap: wrap;
+  margin: 0 10px;
+  color: #572a31;
+}
+
+.footer2 ul li a {
+  color: #572a31;
+}
+
+
+/* 푸터 섹션3 */
+
+.footer3 {
+  position: absolute;
+  top: 80%;
+  left: 360px;
+  display: inline-block;
+  width: 550px;
+  font-size: 15px;
+  color: #7b7b7b;
+}
+
+.address {
+  margin-bottom: 20px;
+}
+
+
+
+
+
+/* -------- 태블릿 ------------- */
+
+@media (max-width: 1024px){
+  .tomwrap {
+    width: 90%;
+  }
+
+  .gnb {
+    display: none;
+  }
+
+  .slide button {
+    z-index: 1;
+  }
+
+  /* 토글버튼 */
+
+  .toogle {
+    display: block;
+    float: left;
+    padding-top: 15px;
+  }
+
+  .toogle > ::before {
+    position: absolute;
+    font-size: 40px;
+  }
+
+  .cart {
+    display: block;
+    float: right;
+    padding-top: 25px;
+  }
+
+  .cart > ::before {
+    font-size: 45px;
+  }
+
+  /* 헤더메인로고 */
+
+  .logo  {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .logo img {
+    width: 70px;
+  }
+
+  /* 헤더 */
+
+  .m-gnb-wrapper {
+    display: none;
+    background-color: rgba(0,0,0,.8);
+    width: 100vw;
+    height: 100vh;
+    z-index: 130;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  /* .m-gnb-wrapper.on {
+    transform: translateX(0);
+  } */
+
+  .m-gnb {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 250px;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 11;
+  }
+
+  .m-gnb-list {
+    display: inline-block;
+  }
+
+  .m-gnb-list li {
+    position: static;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0;
+  }
+
+  .m-gnb-list li::after {
+    display: block;
+    content: '';
+    width: 250px;
+    height: 1px;
+    margin: 5px 0;
+    background-color: #000;
+  }
+
+  .m-gnb-list li a {
+    /* font-size: 16px; */
+    font-weight: 300;
+    padding-left: 10px;
+  }
+
+  .m-gnb-logo {
+    position: absolute;
+    text-align: center;
+  }
+
+  .m-gnb-logo img {
+    width: 161px;
+    height: 12px;
+  }
+
+  /* 메인슬라이드 */
+
+
+
+  /* 탐앤탐스 메뉴소개 */
+
+  .menu-item img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .menu-item span {
+    font-size: 17px;
+  }
+
+  /* 탐앤탐스 브랜드 소개 */
+
+  .tmbrand-desc {
+    width: 70%;
+  }
+
+  .tmbrand-desc h2 {
+    font-size: 38px;
+  }
+
+  .tmbrand-desc p {
+    font-size: 18px;
+  }
+
+  /* 탐앤탐스 선물 */
+
+  .gift-item span {
+    font-size: 17px;
+  }
+
+/* 탐앤탐스 SNS */
+
+  .sns-list ul li {
+  }
+
+  /* 푸터 */
+
+  footer {
+    display: block;
+    height: 600px;
+  }
+
+  .footer-desc {
+    width: 500px;
+  }
+
+  .footer1 {
+    display: inline-block;
+    position: static;
+    margin: 0;
+  }
+  
+  .footer2 {
+    display: inline-block;
+    width: 500px;
+    position: static;
+    margin: 50px 0;
+  } 
+  
+  .footer2 ul {
+    margin-left: -10px;
+  }
+
+  .footer3 {
+    left: 0;
+  }
+}
