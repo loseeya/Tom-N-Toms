@@ -478,6 +478,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  overflow: hidden;
 }
 
 .sns-list ul li {
@@ -488,7 +489,6 @@
   -ms-transform: scale(1);
   -o-transform: scale(1);
   overflow: hidden;
-  height: 280px;
 }
 
 .sns-list ul li img {
