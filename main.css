@@ -817,6 +817,7 @@ footer {
   .tmbrand-desc {
 /*     width: 90%; */
     width: 95%;
+    margin-top: 200px;
     text-align: center;
   }
 
